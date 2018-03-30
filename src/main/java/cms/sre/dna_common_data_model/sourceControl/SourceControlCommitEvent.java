@@ -3,6 +3,7 @@ package cms.sre.dna_common_data_model.sourceControl;
 import cms.sre.dna_common_data_model.Block;
 import cms.sre.dna_common_data_model.Event;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,6 +14,61 @@ public class SourceControlCommitEvent extends Event {
     private String sshUrl;
     private String branchName;
     private List<SourceControlCommit> commits;
+
+    public long getNumberOfChanges() {
+        return numberOfChanges;
+    }
+
+    public void setNumberOfChanges(long numberOfChanges) {
+        this.numberOfChanges = numberOfChanges;
+    }
+
+    public String getRevisionNumber() {
+        return revisionNumber;
+    }
+
+    public void setRevisionNumber(String revisionNumber) {
+        this.revisionNumber = revisionNumber;
+    }
+
+    public String getPullNumber() {
+        return pullNumber;
+    }
+
+    public void setPullNumber(String pullNumber) {
+        this.pullNumber = pullNumber;
+    }
+
+    public Calendar getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Calendar timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getCommitMessage() {
+        return commitMessage;
+    }
+
+    public void setCommitMessage(String commitMessage) {
+        this.commitMessage = commitMessage;
+    }
+
+    public String getParentRevisionNumber() {
+        return parentRevisionNumber;
+    }
+
+    public void setParentRevisionNumber(String parentRevisionNumber) {
+        this.parentRevisionNumber = parentRevisionNumber;
+    }
+
+    private long numberOfChanges;
+    private String revisionNumber;
+    private String pullNumber;
+    private Calendar timestamp;
+    private String commitMessage;
+    private String parentRevisionNumber;
 
     public SourceControlCommitEvent(){
         super();
