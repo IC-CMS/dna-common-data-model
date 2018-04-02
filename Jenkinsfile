@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh "cat pom.xml | sed 's/<version>1.1.BUILDNUMBER/<version>1.1.$BUILD_NUMBER/' | tee pom.xml > /dev/null"
                 sh "/usr/bin/docker login -u dhessler -p $docker_pass"
-                sh "mvn -B -DskipTests -s /tmp/maven_settings/settings.xml clean install"
+                sh "mvn -B -DskipTests -s /tmp/maven_settings/settings.xml clean deploy"
             }
         }
     }
