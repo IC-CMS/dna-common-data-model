@@ -14,55 +14,6 @@ public class SourceControlCommitEvent extends Event {
     private String sshUrl;
     private String branchName;
     private List<SourceControlCommit> commits;
-
-    public long getNumberOfChanges() {
-        return numberOfChanges;
-    }
-
-    public void setNumberOfChanges(long numberOfChanges) {
-        this.numberOfChanges = numberOfChanges;
-    }
-
-    public String getRevisionNumber() {
-        return revisionNumber;
-    }
-
-    public void setRevisionNumber(String revisionNumber) {
-        this.revisionNumber = revisionNumber;
-    }
-
-    public String getPullNumber() {
-        return pullNumber;
-    }
-
-    public void setPullNumber(String pullNumber) {
-        this.pullNumber = pullNumber;
-    }
-
-    public Calendar getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Calendar timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getCommitMessage() {
-        return commitMessage;
-    }
-
-    public void setCommitMessage(String commitMessage) {
-        this.commitMessage = commitMessage;
-    }
-
-    public String getParentRevisionNumber() {
-        return parentRevisionNumber;
-    }
-
-    public void setParentRevisionNumber(String parentRevisionNumber) {
-        this.parentRevisionNumber = parentRevisionNumber;
-    }
-
     private long numberOfChanges;
     private String revisionNumber;
     private String pullNumber;
@@ -82,11 +33,11 @@ public class SourceControlCommitEvent extends Event {
         super(classification,emitter, blockChain);
     }
 
-    public SourceControlCommitEvent(Event other){
+    public SourceControlCommitEvent(SourceControlCommitEvent other){
         super(other);
     }
 
-    public SourceControlCommitEvent(String emitter, Event other){
+    public SourceControlCommitEvent(String emitter, SourceControlCommitEvent other){
         super(emitter,other);
     }
 
@@ -141,6 +92,60 @@ public class SourceControlCommitEvent extends Event {
 
     public SourceControlCommitEvent setCommits(List<SourceControlCommit> commits) {
         this.commits = commits;
+        return this;
+    }
+
+    public long getNumberOfChanges() {
+        return numberOfChanges;
+    }
+
+    public SourceControlCommitEvent setNumberOfChanges(long numberOfChanges) {
+        this.numberOfChanges = numberOfChanges;
+        return this;
+    }
+
+    public String getRevisionNumber() {
+        return revisionNumber;
+    }
+
+    public SourceControlCommitEvent setRevisionNumber(String revisionNumber) {
+        this.revisionNumber = revisionNumber;
+        return this;
+    }
+
+    public String getPullNumber() {
+        return pullNumber;
+    }
+
+    public SourceControlCommitEvent setPullNumber(String pullNumber) {
+        this.pullNumber = pullNumber;
+        return this;
+    }
+
+    public Calendar getTimestamp() {
+        return timestamp;
+    }
+
+    public SourceControlCommitEvent setTimestamp(Calendar timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    public String getCommitMessage() {
+        return commitMessage;
+    }
+
+    public SourceControlCommitEvent setCommitMessage(String commitMessage) {
+        this.commitMessage = commitMessage;
+        return this;
+    }
+
+    public String getParentRevisionNumber() {
+        return parentRevisionNumber;
+    }
+
+    public SourceControlCommitEvent setParentRevisionNumber(String parentRevisionNumber) {
+        this.parentRevisionNumber = parentRevisionNumber;
         return this;
     }
 
