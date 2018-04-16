@@ -6,7 +6,7 @@
 
     <groupId>cms.sre</groupId>
     <artifactId>dna-common-data-model</artifactId>
-    <version>1.1.BUILDNUMBER</version>
+    <version>1.1.26</version>
     <scm>
         <url>https://github.com/IC-CMS/dna-common-data-model</url>
     </scm>
@@ -25,6 +25,13 @@
             <url>https://api.bintray.com/maven/ic-cms/Maven/dna-common-data-model/;publish=1</url>
         </repository>
     </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.capitalone.dashboard</groupId>
+            <artifactId>core</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
