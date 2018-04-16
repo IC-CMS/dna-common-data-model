@@ -29,4 +29,13 @@ public class GitlabCommitToHygieiaCommitEvent extends Event {
     public GitlabCommitToHygieiaCommitEvent(String emitter, GitlabCommitToHygieiaCommitEvent other){
         super(emitter, other);
     }
+
+    public Commit getCommit() {
+        return commit;
+    }
+
+    public GitlabCommitToHygieiaCommitEvent setCommit(Commit commit) {
+        this.commit = commit;
+        return this;
+    }
 }
