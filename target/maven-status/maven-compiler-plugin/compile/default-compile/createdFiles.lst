@@ -1,4 +1,5 @@
 cms\sre\dna_common_data_model\Block.class
+cms\sre\dna_common_data_model\hygieia\GitlabCommitToHygieiaCommitEvent.class
 cms\sre\dna_common_data_model\sourceControl\SourceControlCommitEvent.class
 cms\sre\dna_common_data_model\sourceControl\SourceControlCommit.class
 cms\sre\dna_common_data_model\Event.class

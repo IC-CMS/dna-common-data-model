@@ -1,4 +1,5 @@
-D:\Users\dhhessl\IdeaProjects\dnacommondatamodel\src\main\java\cms\sre\dna_common_data_model\sourceControl\SourceControlCommit.java
-D:\Users\dhhessl\IdeaProjects\dnacommondatamodel\src\main\java\cms\sre\dna_common_data_model\Block.java
-D:\Users\dhhessl\IdeaProjects\dnacommondatamodel\src\main\java\cms\sre\dna_common_data_model\sourceControl\SourceControlCommitEvent.java
-D:\Users\dhhessl\IdeaProjects\dnacommondatamodel\src\main\java\cms\sre\dna_common_data_model\Event.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\sourceControl\SourceControlCommit.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\Event.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\sourceControl\SourceControlCommitEvent.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\hygieia\GitlabCommitToHygieiaCommitEvent.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\Block.java
