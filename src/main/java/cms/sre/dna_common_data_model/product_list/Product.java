@@ -2,8 +2,10 @@ package cms.sre.dna_common_data_model.product_list;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 public class Product {
-    private String[] developers;
+    private List<String> developers;
     private String program;
     private String section;
     @Id
@@ -18,11 +20,11 @@ public class Product {
     private Boolean needsSCM;
     private String SCMLocation;
 
-    public String[] getDevelopers() {
+    public List<String> getDevelopers() {
         return developers;
     }
 
-    public Product setDevelopers(String[] developers) {
+    public Product setDevelopers(List<String> developers) {
         this.developers = developers;
         return this;
     }
