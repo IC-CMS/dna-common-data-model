@@ -2,4 +2,8 @@ D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_co
 D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\Event.java
 D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\sourceControl\SourceControlCommitEvent.java
 D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\hygieia\GitlabCommitToHygieiaCommitEvent.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\product_list\NewProductDiscoveredEvent.java
 D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\Block.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\product_list\Product.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\product_list\ProductFoundEvent.java
+D:\Users\dhhessl\IdeaProjects\dna-common-data-model\src\main\java\cms\sre\dna_common_data_model\product_list\ProductEliminatedEvent.java
