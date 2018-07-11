@@ -4,7 +4,10 @@ public class SendEmailRequest {
     private String dn;
     private String subject;
     private String body;
-
+    
+    public SendEmailRequest(){
+        
+    }
     public String getDn() {
         return dn;
     }
