@@ -6,7 +6,7 @@
 
     <groupId>cms.sre</groupId>
     <artifactId>dna-common-data-model</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.BUILDNUMBER</version>
     <scm>
         <url>https://github.com/IC-CMS/dna-common-data-model</url>
     </scm>
