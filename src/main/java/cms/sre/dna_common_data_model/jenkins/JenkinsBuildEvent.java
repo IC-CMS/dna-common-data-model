@@ -1,8 +1,11 @@
-package cms.sre.dna_common_data_model.terraform;
+package cms.sre.dna_common_data_model.jenkins;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class JenkinsBuildEvent {
+
+    private String object_kind;
 
     private String project_name;
 
@@ -20,7 +23,15 @@ public class JenkinsBuildEvent {
 
     private String pull_number;
 
-    private String timestamp;
+    private Date timestamp;
+
+    public String getObject_kind() {
+        return object_kind;
+    }
+
+    public void setObject_kind(String object_kind) {
+        this.object_kind = object_kind;
+    }
 
     public String getProject_name() {
         return project_name;
@@ -86,11 +97,11 @@ public class JenkinsBuildEvent {
         this.pull_number = pull_number;
     }
 
-    public String getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -99,7 +110,8 @@ public class JenkinsBuildEvent {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JenkinsBuildEvent that = (JenkinsBuildEvent) o;
-        return Objects.equals(project_name, that.project_name) &&
+        return  Objects.equals(object_kind, that.object_kind) &&
+                Objects.equals(project_name, that.project_name) &&
                 Objects.equals(ssl_url, that.ssl_url) &&
                 Objects.equals(classification, that.classification) &&
                 Objects.equals(branch_name, that.branch_name) &&
@@ -119,6 +131,7 @@ public class JenkinsBuildEvent {
     @Override
     public String toString() {
         return "JenkinsBuildEvent{" +
+                "object_kind='" + object_kind + '\'' +
                 "project_name='" + project_name + '\'' +
                 ", ssl_url='" + ssl_url + '\'' +
                 ", classification='" + classification + '\'' +
