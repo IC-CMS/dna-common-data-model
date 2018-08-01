@@ -3,6 +3,9 @@ package cms.sre.dna_common_data_model.jenkins;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Used for sending Build Events from the Gitlab Webhook
+ */
 public class JenkinsBuildEvent {
 
     private String object_kind;
