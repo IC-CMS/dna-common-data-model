@@ -101,7 +101,7 @@ public class System {
 * Deserialization Classes
 *
 **/
-public class CustomKeyDeserializer extends KeyDeserializer {
+class CustomKeyDeserializer extends KeyDeserializer {
 
     private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
 
@@ -123,7 +123,7 @@ public class CustomKeyDeserializer extends KeyDeserializer {
 *
 *
 **/
-public class ToasterDeserializer extends StdDeserializer<Toaster> {
+class ToasterDeserializer extends StdDeserializer<Toaster> {
 
     public ToasterDeserializer(){
         this(null);
