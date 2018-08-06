@@ -9,6 +9,7 @@ public class System {
     private String description;
     private String owner;
     private List<Toaster> toasters;
+    @JsonDeserialize(keyUsing = CustomKeyDeserializer.class)
     private Map<Toaster, List<Toaster>> dependenciesMap;
 
     public String getName() {
