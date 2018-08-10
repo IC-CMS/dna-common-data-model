@@ -29,6 +29,7 @@ public class System {
     private String description;
     private String owner;
     private List<Toaster> toasters;
+    
     @JsonDeserialize(keyUsing = ToasterKeyDeserializer.class)
     private Map<Toaster, List<Toaster>> dependenciesMap;
 
@@ -98,7 +99,7 @@ public class System {
 
 /**
 *
-* Deserialization Classes
+* Key Deserialization Class
 *
 **/
 class ToasterKeyDeserializer extends KeyDeserializer {
@@ -111,9 +112,6 @@ class ToasterKeyDeserializer extends KeyDeserializer {
         logger.info("Custom Key Deserialization has been accessed.");
         
         ObjectMapper mapper = new ObjectMapper();
-        SimpleModule module = new SimpleModule();
-
-       
 
         return mapper.readValue(key, Toaster.class);
 
