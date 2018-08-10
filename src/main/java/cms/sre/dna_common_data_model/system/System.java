@@ -109,149 +109,15 @@ class CustomKeyDeserializer extends KeyDeserializer {
     public Toaster deserializeKey(String key, DeserializationContext ctxt) throws IOException{
 
         logger.info("Custom Key Deserialization has been accessed.");
+        
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule();
 
-        module.addDeserializer(Toaster.class, new ToasterDeserializer());
+       
 
         return mapper.readValue(key, Toaster.class);
 
     }
 }
-/**
-*
-*
-*
-**/
-class ToasterDeserializer extends StdDeserializer<Toaster> {
 
-    public ToasterDeserializer(){
-        this(null);
-    }
 
-    public ToasterDeserializer(Class<?> vc){
-
-        super(vc);
-
-    }
-
-    @Override
-    public Toaster deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
-
-        Toaster mmmToast = new Toaster();
-        JsonNode rootNode = jp.getCodec().readTree(jp);
-
-        List<PersistentVolume> volumes = new ArrayList<>();
-
-        for(JsonNode node : rootNode.get("persistentVolumes")){
-
-            volumes.add(
-                    new PersistentVolume()
-                            .setId(node.get("id").asText())
-                            .setName(node.get("name").asText())
-                            .setSpaceInGb(node.get("spaceInGb").asInt()));
-        }
-
-        mmmToast.setPackerScript(
-                new PackerScript()
-                        .setScriptFile(
-                                new ScriptFile()
-                                        .setFilename(
-                                                rootNode
-                                                        .get("packerScript")
-                                                        .get("scriptFile")
-                                                        .get("fileName")
-                                                        .asText())
-                                        .setBinaryFile(
-                                                rootNode.get("packerScript")
-                                                .get("scriptFile")
-                                                .get("binaryFile")
-                                                .binaryValue())
-                                        .setContents(
-                                                rootNode.get("packerScript")
-                                                        .get("scriptFile")
-                                                        .get("contents")
-                                                        .asText())))
-                .setTerraformScript(
-                        new TerraformScript()
-                                .setMainScript(
-                                        new ScriptFile()
-                                        .setFilename(
-                                                rootNode
-                                                        .get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("fileName")
-                                                        .asText()
-                                        )
-                                .setBinaryFile(
-                                        rootNode.get("terraformScript")
-                                                .get("scriptFile")
-                                                .get("binaryFile")
-                                                .binaryValue()
-                                ).setContents(
-                                                rootNode.get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("contents")
-                                                        .asText()))
-                                .setVariableScript(
-                                new ScriptFile()
-                                        .setFilename(
-                                                rootNode
-                                                        .get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("fileName")
-                                                        .asText()
-                                        )
-                                        .setBinaryFile(
-                                                rootNode.get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("binaryFile")
-                                                        .binaryValue()
-                                        ).setContents(
-                                        rootNode.get("terraformScript")
-                                                .get("scriptFile")
-                                                .get("contents")
-                                                .asText()))
-                                .setProviderScript(
-                                new ScriptFile()
-                                        .setFilename(
-                                                rootNode
-                                                        .get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("fileName")
-                                                        .asText()
-                                        )
-                                        .setBinaryFile(
-                                                rootNode.get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("binaryFile")
-                                                        .binaryValue()
-                                        ).setContents(
-                                        rootNode.get("terraformScript")
-                                                .get("scriptFile")
-                                                .get("contents")
-                                                .asText()))
-                                .setDataSourcesScript(
-                                new ScriptFile()
-                                        .setFilename(
-                                                rootNode
-                                                        .get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("fileName")
-                                                        .asText()
-                                        )
-                                        .setBinaryFile(
-                                                rootNode.get("terraformScript")
-                                                        .get("scriptFile")
-                                                        .get("binaryFile")
-                                                        .binaryValue()
-                                        ).setContents(
-                                        rootNode.get("terraformScript")
-                                                .get("scriptFile")
-                                                .get("contents")
-                                                .asText())))
-                .setPersistentVolumes(volumes);
-
-        return mmmToast;
-    }
-}
