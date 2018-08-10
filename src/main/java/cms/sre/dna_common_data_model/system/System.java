@@ -102,7 +102,7 @@ public class System {
 * Key Deserialization Class
 *
 **/
-class ToasterKeyDeserializer extends KeyDeserializer {
+public class ToasterKeyDeserializer extends KeyDeserializer {
 
     private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
 
