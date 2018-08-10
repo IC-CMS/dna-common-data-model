@@ -20,6 +20,22 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 public class System {
+    protected class ToasterKeyDeserializer extends KeyDeserializer {
+
+        private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
+
+        @Override
+        public Toaster deserializeKey(String key, DeserializationContext ctxt) throws IOException{
+
+            logger.info("Custom Key Deserialization has been accessed.");
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            return mapper.readValue(key, Toaster.class);
+
+        }
+    }
+
     private String name;
     private String description;
     private String owner;
@@ -97,20 +113,6 @@ public class System {
 * Key Deserialization Class
 *
 **/
-class ToasterKeyDeserializer extends KeyDeserializer {
 
-    private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
-
-    @Override
-    public Toaster deserializeKey(String key, DeserializationContext ctxt) throws IOException{
-
-        logger.info("Custom Key Deserialization has been accessed.");
-        
-        ObjectMapper mapper = new ObjectMapper();
-
-        return mapper.readValue(key, Toaster.class);
-
-    }
-}
 
 
