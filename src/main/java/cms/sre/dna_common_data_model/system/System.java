@@ -29,7 +29,7 @@ public class System {
     private String description;
     private String owner;
     private List<Toaster> toasters;
-    @JsonDeserialize(keyUsing = CustomKeyDeserializer.class)
+    @JsonDeserialize(keyUsing = ToasterKeyDeserializer.class)
     private Map<Toaster, List<Toaster>> dependenciesMap;
 
     public String getName() {
@@ -101,7 +101,7 @@ public class System {
 * Deserialization Classes
 *
 **/
-class CustomKeyDeserializer extends KeyDeserializer {
+class ToasterKeyDeserializer extends KeyDeserializer {
 
     private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
 
