@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.KeyDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +23,7 @@ import java.io.IOException;
 public class System {
     protected class ToasterKeyDeserializer extends KeyDeserializer {
 
-        private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
+        private Logger logger = LoggerFactory.getLogger(ToasterKeyDeserializer.class);
 
         @Override
         public Toaster deserializeKey(String key, DeserializationContext ctxt) throws IOException{
@@ -107,12 +108,5 @@ public class System {
         return Objects.hash(name, description, owner, toasters, dependenciesMap);
     }
 }
-
-/**
-*
-* Key Deserialization Class
-*
-**/
-
 
 
