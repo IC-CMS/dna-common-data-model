@@ -13,11 +13,6 @@ import cms.sre.dna_common_data_model.system.PersistentVolume;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.KeyDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -102,7 +97,7 @@ public class System {
 * Key Deserialization Class
 *
 **/
-public class ToasterKeyDeserializer extends KeyDeserializer {
+class ToasterKeyDeserializer extends KeyDeserializer {
 
     private Logger logger = LoggerFactory.getLogger(CustomKeyDeserializer.class);
 
