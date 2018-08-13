@@ -13,14 +13,15 @@ import cms.sre.dna_common_data_model.system.PersistentVolume;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.KeyDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-
 public class System {
+    @JsonIgnoreType
     protected class ToasterKeyDeserializer extends KeyDeserializer {
 
         private Logger logger = LoggerFactory.getLogger(ToasterKeyDeserializer.class);
