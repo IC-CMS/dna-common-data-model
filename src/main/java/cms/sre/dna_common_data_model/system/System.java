@@ -13,6 +13,8 @@ import cms.sre.dna_common_data_model.system.PersistentVolume;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.KeyDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.slf4j.Logger;
@@ -20,7 +22,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class System {
+    
     protected class ToasterKeyDeserializer extends KeyDeserializer {
 
         private Logger logger = LoggerFactory.getLogger(ToasterKeyDeserializer.class);
