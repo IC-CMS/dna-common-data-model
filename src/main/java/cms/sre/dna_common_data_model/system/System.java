@@ -21,10 +21,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class System {
-    
+    @JsonIgnoreType
     protected class ToasterKeyDeserializer extends KeyDeserializer {
 
         private Logger logger = LoggerFactory.getLogger(ToasterKeyDeserializer.class);
