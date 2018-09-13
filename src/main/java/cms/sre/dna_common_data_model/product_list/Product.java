@@ -18,7 +18,7 @@ public class Product {
     private String org;
     private String division;
     private Boolean needsSCM;
-    private String SCMLocation;
+    private String scmLocation;
 
     public List<String> getDevelopers() {
         return developers;
@@ -128,12 +128,12 @@ public class Product {
         return this;
     }
 
-    public String getSCMLocation() {
-        return SCMLocation;
+    public String getScmLocation() {
+        return scmLocation;
     }
 
-    public Product setSCMLocation(String SCMLocation) {
-        this.SCMLocation = SCMLocation;
+    public Product setScmLocation(String scmLocation) {
+        this.scmLocation = scmLocation;
         return this;
     }
 }
