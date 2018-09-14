@@ -2,13 +2,48 @@ package cms.sre.dna_common_data_model.system;
 
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.Objects;
+import cms.sre.dna_common_data_model.system.Toaster;
+import cms.sre.dna_common_data_model.hashicorpFile.PackerScript;
+import cms.sre.dna_common_data_model.hashicorpFile.ScriptFile;
+import cms.sre.dna_common_data_model.hashicorpFile.TerraformScript;
+import cms.sre.dna_common_data_model.system.PersistentVolume;
 
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.KeyDeserializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 public class System {
+    @JsonIgnoreType
+    protected class ToasterKeyDeserializer extends KeyDeserializer {
+
+        private Logger logger = LoggerFactory.getLogger(ToasterKeyDeserializer.class);
+
+        @Override
+        public Toaster deserializeKey(String key, DeserializationContext ctxt) throws IOException{
+
+            logger.info("Custom Key Deserialization has been accessed.");
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            return mapper.readValue(key, Toaster.class);
+
+        }
+    }
+
     private String name;
     private String description;
     private String owner;
     private List<Toaster> toasters;
+    
+    @JsonDeserialize(keyUsing = ToasterKeyDeserializer.class)
     private Map<Toaster, List<Toaster>> dependenciesMap;
 
     public String getName() {
@@ -74,3 +109,5 @@ public class System {
         return Objects.hash(name, description, owner, toasters, dependenciesMap);
     }
 }
+
+
