@@ -1,6 +1,9 @@
 package cms.sre.dna_common_data_model.emailnotifier;
 
+/** This may become deprecated, I'm not sure we actual put DNs in email address **/
+
 public class SendEmailRequest {
+
     private String dn;
     private String subject;
     private String body;
