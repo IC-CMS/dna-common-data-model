@@ -30,7 +30,7 @@ public class Email {
 
     public Email(String uuid, String emailAddress, String subject, String body) {
 
-        this.uuid = UUID.randomUUID().toString();
+        this.uuid = uuid;
         this.emailAddress = emailAddress;
         this.subject = subject;
         this. body = body;
