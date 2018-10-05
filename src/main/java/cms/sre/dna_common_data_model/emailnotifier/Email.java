@@ -1,12 +1,13 @@
 package cms.sre.dna_common_data_model.emailnotifier;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 /**
  * Common Email class used between micro services
  */
-public class Email {
+public class Email implements Serializable {
 
     private Date createdDate;
     private String uuid;
@@ -15,8 +16,6 @@ public class Email {
     private String body;
 
     public Email () {
-
-        this.uuid = UUID.randomUUID().toString();
 
     }
 
